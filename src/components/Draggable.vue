@@ -1,31 +1,34 @@
   
 <template>
-  <div class="timerBtn">
-    
-    <div>
-      <draggable
-        class="list-group"
-        tag="ul"
-        v-model="todos"
-        v-bind="dragOptions"
-        @start="isDragging = true"
-        @end="isDragging = false"
-      >
-        <transition-group type="transition" name="flip-list">
-          <li
-            class="list-group-item"
-            v-for="todo in todos"
-            :key="todo.id"
-          >
+  <div>
+    <h4 class="text-secondary">Your List</h4>
+    <div class="timerBtn">
       
-        <TodoItem v-bind:todo="todo" v-on:del-todo="$emit('del-todo', todo.id)" />
-            
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
+      <div>
+        <draggable
+          class="list-group"
+          tag="ul"
+          v-model="todos"
+          v-bind="dragOptions"
+          @start="isDragging = true"
+          @end="isDragging = false"
+        >
+          <transition-group type="transition" name="flip-list">
+            <li
+              class="list-group-item"
+              v-for="todo in todos"
+              :key="todo.id"
+            >
+        
+          <TodoItem v-bind:todo="todo" v-on:del-todo="$emit('del-todo', todo.id)" />
+              
+            </li>
+          </transition-group>
+        </draggable>
+      </div>
 
-    <rawDisplayer class="col-3" :value="list" title="List" />
+      <rawDisplayer class="col-3" :value="list" title="List" />
+    </div>
   </div>
 </template>
 

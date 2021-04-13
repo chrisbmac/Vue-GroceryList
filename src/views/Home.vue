@@ -1,7 +1,9 @@
 <template>
   <div id="app" class="container">
+    <div><h4 class="text-secondary">Options</h4></div>
     <Timer v-bind:order="order"></Timer>
     <AddTodo v-on:add-todo="addTodo" />
+    <div><hr></div>
     <draggable v-bind:todos="todos" v-on:del-todo="deleteTodo"></draggable>
   </div>
 </template>
@@ -21,7 +23,7 @@ export default {
   data() {
     return {
       todos: [],
-      order: 30
+      order: 0
     }
   },
   methods: {
@@ -31,6 +33,7 @@ export default {
         .catch(err => console.log(err));
     },
     addTodo(newTodo) {
+      if(!newTodo) return;
       const { title, completed } = newTodo;
 
       axios.post('https://jsonplaceholder.typicode.com/todos', {

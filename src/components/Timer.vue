@@ -1,5 +1,6 @@
 <template>
     <div>
+        
         <a class="timerBtn" href="#" @click="toggleTimer">
             <b-button class="timerBtn" v-if="!isRunning" variant="primary">
                 {{ time }}
@@ -10,7 +11,9 @@
                 <b-icon icon="alarm" animation="fade"></b-icon>
             </b-button>
         </a>
-        
+        <div v-if="time > 0">
+            <b-button @click="resetTime" variant="danger"><b-icon icon="arrow-counterclockwise"></b-icon></b-button>
+        </div>
     </div>
 </template>
 
@@ -40,6 +43,13 @@
             incrementTime() {
                 this.time = parseInt(this.time) + 1;
             },
+            resetTime(){
+                this.time = 0;
+                if(this.isRunning) {
+                    clearInterval(this.interval);
+                    this.isRunning = false;
+                }
+            }
         }
     }
 </script>
