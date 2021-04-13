@@ -1,8 +1,15 @@
 <template>
-  <div>
+  <div class="timerBtn">
     <form @submit.prevent="addTodo">
-      <input type="text" v-model="title" name="title" placeholder="Add item">
-      <input type="submit" value="Submit" class="btn">
+      <b-input-group>
+        <b-input-group-prepend is-text>
+          <b-icon icon="basket"></b-icon>
+          <b-form-input type="text" v-model="title" name="title" placeholder="Add item"></b-form-input>
+        </b-input-group-prepend>
+        <b-button type="submit" variant="outline-primary">
+          <b-icon icon="bag-plus"></b-icon>
+        </b-button>
+      </b-input-group>
     </form>
   </div>
 </template>
@@ -36,14 +43,14 @@ export default {
     display: flex;
   }
 
-  input[type="text"] {
-    flex: 10;
-    padding: 5px;
-  }
-
-  input[type="submit"] {
-    flex: 2;
-  }
+  .timerBtn{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width:100%;
+        margin: 2%;
+        
+    }
 </style>
 
 

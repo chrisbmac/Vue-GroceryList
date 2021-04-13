@@ -1,10 +1,20 @@
 <template>
   <header class="header">
-    <h1>TodoList</h1>
+    <h1>Shopping List <b-icon icon="basket"></b-icon></h1>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <b-button-group>
+        <b-button variant="outline-primary">
+          <router-link to="/">Home
+            <b-icon icon="home"></b-icon>
+          </router-link>
+        </b-button>
+        <b-button variant="outline-primary">
+          <router-link to="/about">About<b-icon icon="about"></b-icon>
+          </router-link>
+        </b-button>
+      </b-button-group>
     </div>
+    <hr>
   </header>
 </template>
 
@@ -16,14 +26,14 @@ export default {
 
 <style scoped>
   .header {
-    background: #333;
-    color: #fff;
+    background: rgb(255, 255, 255);
+    color: rgb(29, 53, 236);
     text-align: center;
     padding: 10px;
   }
 
   .header a {
-    color: #fff;
+    color: rgb(10, 10, 10);
     padding-right: 5px;
     text-decoration: none;
   }

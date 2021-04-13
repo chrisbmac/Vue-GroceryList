@@ -9,9 +9,13 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
     "uuid": "^3.3.2",
-    "vue": "^2.5.21",
-    "vue-router": "^3.0.1"
+    "vue": "^2.6.12",
+    "vue-draggable-next": "^2.0.1",
+    "vue-router": "^3.0.1",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
@@ -20,7 +24,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,

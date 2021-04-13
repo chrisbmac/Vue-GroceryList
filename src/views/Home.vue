@@ -1,24 +1,27 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
+    <Timer v-bind:order="order"></Timer>
     <AddTodo v-on:add-todo="addTodo" />
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
+    <draggable v-bind:todos="todos" v-on:del-todo="deleteTodo"></draggable>
   </div>
 </template>
 
 <script>
-import Todos from '../components/Todos';
+import Timer from '../components/Timer';
 import AddTodo from '../components/AddTodo';
 import axios from 'axios';
-
+import draggable from '../components/Draggable';
 export default {
   name: 'Home',
   components: {
-    Todos,
-    AddTodo
+    Timer,
+    AddTodo,
+    draggable,
   },
   data() {
     return {
-      todos: []
+      todos: [],
+      order: 30
     }
   },
   methods: {

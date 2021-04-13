@@ -1,16 +1,18 @@
 <template>
-  <div id="app">
-    <div><h3 style="color:white;">Add items to your list:</h3><br><br></div>
+  <div class="container" id="app">
+    <Header></Header>
+    
     <router-view/>
   </div>
 </template>
 
 <script>
 import Header from './components/layout/Header';
+
 export default {
   name:"app",
   components: {
-    Header
+    Header,
   }
 }
 </script>

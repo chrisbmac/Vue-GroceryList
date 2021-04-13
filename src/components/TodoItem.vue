@@ -1,11 +1,15 @@
 <template>
-  <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
-    <p>
-      <input type="checkbox" v-on:change="markComplete" v-bind:checked="todo.completed">
-      {{todo.title}}
-      <button @click="$emit('del-todo', todo.id)" class="del">x</button>
+  <b-form-group size="sm">
+    <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
+      <p>
+        <input type="checkbox" v-on:change="markComplete" v-bind:checked="todo.completed">
+        {{todo.title}}
+        <b-button variant="danger" class="del" @click="$emit('del-todo', todo.id)">
+          <b-icon icon="bag-x"></b-icon>
+        </b-button>
       </p>
-  </div>
+    </div>
+  </b-form-group>
 </template>
 
 <script>
@@ -22,19 +26,18 @@ export default {
 
 <style scoped>
   .todo-item {
-    background: #f4f4f4;
+    background: #2e5bf0;
     padding: 10px;
-    border-bottom: 1px #ccc dotted;
+    border-radius: 2%;
+    border-bottom: 1px rgb(2, 2, 2) dotted;
   }
 
   .is-complete {
     text-decoration: line-through;
+    background-color: rgb(81, 236, 81);
   }
 
   .del {
-    background: #ff0000;
-    color: #fff;
-    border: none;
     padding: 5px 9px;
     border-radius: 50%;
     cursor: pointer;
